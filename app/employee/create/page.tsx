@@ -55,6 +55,7 @@ const CreateEmployeePage = () => {
                         <p className="mt-2 text-sm text-red-500">{state?.Error?.phone}</p>
                     </div>
                 </div>
+                
                 <div className="mt-5">
                     <button className="btn btn-primary">Save</button>
                     <Link href="/employee" className="btn btn-error">
