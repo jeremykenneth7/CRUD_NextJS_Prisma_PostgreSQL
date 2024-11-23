@@ -26,7 +26,8 @@ const Employee = async () => {
                             <td className="py-3 px-6">{employee.email}</td>
                             <td className="py-3 px-6">{employee.phone}</td>
                             <td className="py-3 px-6 text-center">
-                                {/* Add action buttons here */}
+                                <button className="btn btn-primary">Edit</button>
+                                <button className="btn btn-danger">Delete</button>  
                             </td>
                         </tr>
                     ))}

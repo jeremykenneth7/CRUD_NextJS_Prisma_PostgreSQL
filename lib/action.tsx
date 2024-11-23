@@ -14,21 +14,21 @@ const EmployeeSchema = z.object({
 });
 
 export const saveEmployee = async (prevState: any, formData: FormData) => {
-    const validateFields = EmployeeSchema.safeParse(Object.fromEntries(formData.entries()));
+    const validatedFields = EmployeeSchema.safeParse(Object.fromEntries(formData.entries()));
 
-    if (!validateFields.success) {
+    if (!validatedFields.success) {
         return {
-            Error: validateFields.error.flatten().fieldErrors,
+            Error: validatedFields.error.flatten().fieldErrors,
         };
     }
 
     try {
-        const { name, email, phone } = validateFields.data;
+        const { name, email, phone } = validatedFields.data;
         await prisma.employee.create({
             data: {
-                name,
-                email,
-                phone,
+                name: validatedFields.data.name,
+                email: validatedFields.data.email,
+                phone: validatedFields.data.phone,
             },
         });
         console.log("Success");

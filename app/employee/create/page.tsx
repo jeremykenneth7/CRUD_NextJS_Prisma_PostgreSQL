@@ -57,7 +57,7 @@ const CreateEmployeePage = () => {
                 </div>
                 <div className="mt-5">
                     <button className="btn btn-primary">Save</button>
-                    <Link href="/" className="btn btn-error">
+                    <Link href="/employee" className="btn btn-error">
                         Cancel
                     </Link>
                 </div>
